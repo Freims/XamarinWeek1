@@ -16,17 +16,14 @@ namespace XamarinWeek1.ViewModels
         public LoginPageViewModel()
         {
             User = new User();
-
             LoginCommand = new Command(async() =>
             {
                 ValidateLoginForm();
             }
             );
         }
-
         public async void  ValidateLoginForm()
         {
-
             if (String.IsNullOrEmpty(User.Username) || String.IsNullOrEmpty(User.Password))
                 await App.Current.MainPage.DisplayAlert("Username and password fields are required", "Please check and try again.", "Accept");
             else
