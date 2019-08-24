@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinWeek1.Android", "Xam
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinWeek1.iOS", "XamarinWeek1.iOS\XamarinWeek1.iOS.csproj", "{4B7D6C65-8694-4C94-8959-4BDE497AD383}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinWeek1", "XamarinWeek1\XamarinWeek1.csproj", "{DFD43ED0-2894-4F52-A4B2-39B42EAC78C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XamarinWeek1", "XamarinWeek1\XamarinWeek1.csproj", "{DFD43ED0-2894-4F52-A4B2-39B42EAC78C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

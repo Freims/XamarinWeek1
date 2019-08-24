@@ -12,11 +12,13 @@
             <Entry 
                     x:Name="usernameInput" 
                     Placeholder="Username"
+                    Text="{Binding User.Username, Mode=TwoWay}"
             ></Entry>
 
             <Entry x:Name="passwordInput" 
                        Placeholder="Password" 
                        IsPassword="True"
+                       Text="{Binding User.Password, Mode=TwoWay}"
              ></Entry>
 
             <Button x:Name="loginButton" 
@@ -24,7 +26,8 @@
                         TextColor="White"  
                         FontAttributes="Bold" 
                         Text="Ingresar"
-                        Clicked="LoginButtonClicked"></Button>
+                        Command="{Binding LoginCommand}"></Button>
+
         </StackLayout>
     </ScrollView>
 

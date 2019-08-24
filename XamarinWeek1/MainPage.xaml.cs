@@ -4,7 +4,8 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Xamarin.Forms; 
+using Xamarin.Forms;
+using XamarinWeek1.ViewModels;
 
 namespace XamarinWeek1
 {
@@ -16,6 +17,7 @@ namespace XamarinWeek1
         public MainPage()
         {
             InitializeComponent();
+            BindingContext = new LoginPageViewModel();
         }
 
         private async void  LoginButtonClicked(object sender, EventArgs e)
