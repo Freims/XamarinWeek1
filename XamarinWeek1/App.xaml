@@ -6,6 +6,20 @@
              mc:Ignorable="d"
              x:Class="XamarinWeek1.App">
     <Application.Resources>
-
+        <ResourceDictionary>
+            <Style x:Key="ValidationLabels" TargetType="Label">
+                <Setter Property="TextColor" Value="Red"/>
+                <Setter Property="FontFamily" Value="OpenSans"/>
+                <Setter Property="FontSize" Value="Small"/>
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontFamily" Value="OpenSans"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="BorderRadius" Value="10"/>
+                <Setter Property="BackgroundColor" Value="Red"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+            </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

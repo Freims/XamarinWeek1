@@ -28,6 +28,8 @@
                         Text="Ingresar"
                         Command="{Binding LoginCommand}"></Button>
 
+            <Label Text="{Binding ValidationMessage}" Style="{StaticResource ValidationLabels}" />
+
         </StackLayout>
     </ScrollView>
 
