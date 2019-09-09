@@ -5,9 +5,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="XamarinWeek1.Views.ContactListPage"
-             Title="Contacts">
+             Title="Contacts"
+             x:Name="body">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Name="MenuItem1" Order="Primary" Text="ADD" Priority="0" />
+        <ToolbarItem Name="MenuItem1" Order="Primary" Text="ADD" 
+                       Command="{Binding AddContactCommand, Source={x:Reference body}}" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
@@ -36,7 +38,9 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            
+            <Button Text="ADD" VerticalOptions="End" HorizontalOptions="CenterAndExpand" 
+                    Style="{StaticResource AddButton}"
+                    Command="{Binding AddContactCommand}"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

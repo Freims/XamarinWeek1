@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using XamarinWeek1.Models;
+using XamarinWeek1.Views;
 
 namespace XamarinWeek1.ViewModels
 {
@@ -31,6 +33,8 @@ namespace XamarinWeek1.ViewModels
         public Command<Contact> DeleteElementCommand { get; }
         public Command<Contact> MoreCommand { get; }
 
+        public ICommand AddContactCommand { get; set; }
+
         public ContactViewModel()
         {
             Contact myContact = new Contact();
@@ -53,7 +57,6 @@ namespace XamarinWeek1.ViewModels
             MoreCommand = new Command<Contact>(async (param) =>
             {
                
-                
                 var result = await App.Current.MainPage.DisplayActionSheet("Menu", "Cancel","", $"Call {param.PhoneNumber}", "Edit");
                 if(result == $"Call {param.PhoneNumber}")
                 {
@@ -61,19 +64,23 @@ namespace XamarinWeek1.ViewModels
                 }
             });
 
+            AddContactCommand = new Command(async()=>
+            {
+                await App.Current.MainPage.Navigation.PushAsync(new NewContactPage());
+            });
+
+
             //Messaging Center sample
-            MessagingCenter.Subscribe<App, string>(this, "TESTID", ((sender, param) =>
+            MessagingCenter.Subscribe<string, Contact>(this, "TESTID", ((sender, param) =>
             {
                 MessagingCenter.Unsubscribe<App, string>(this, "TESTID");
             }));
+            
         }
 
         void OnSelectItem(Contact contact)
         {
-            Contact myContact = new Contact();
-            myContact.Name = "New Student";
-
-            Contacts.Add(myContact);
+          
         }
     }
 
