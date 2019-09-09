@@ -6,15 +6,17 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XamarinWeek1.ViewModels;
 
 namespace XamarinWeek1.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class HomePageDetail : ContentPage
+    public partial class ContactListPage : ContentPage
     {
-        public HomePageDetail()
+        public ContactListPage()
         {
             InitializeComponent();
+            this.BindingContext = new ContactViewModel();
         }
     }
 }

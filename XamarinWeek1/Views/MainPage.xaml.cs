@@ -20,16 +20,5 @@ namespace XamarinWeek1
             BindingContext = new LoginPageViewModel();
         }
 
-        private async void  LoginButtonClicked(object sender, EventArgs e)
-        {
-            string password = passwordInput.Text;
-            string username = usernameInput.Text;
-
-          if(String.IsNullOrEmpty(password) || String.IsNullOrEmpty(username))
-                await DisplayAlert("Username and password fields are required", "Please check and try again.", "Accept");
-          else
-                await DisplayAlert("Login sucessful", $"Welcome {username}!", "Ok");
-
-        }
     }
 }

@@ -5,6 +5,7 @@ using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 using XamarinWeek1.Models;
+using XamarinWeek1.Views;
 
 namespace XamarinWeek1.ViewModels
 {
@@ -37,10 +38,12 @@ namespace XamarinWeek1.ViewModels
             if (String.IsNullOrEmpty(User.Username) || String.IsNullOrEmpty(User.Password))
             {
                 ValidationMessage = "Both fields can't be left blank. Please check.";
+                ValidationLabelVisible = true;
             }
             else
             {
                 await App.Current.MainPage.DisplayAlert("Login sucessful", $"Welcome {User.Username}!", "Ok");
+                await App.Current.MainPage.Navigation.PushAsync(new ContactListPage());
             }
 
         }

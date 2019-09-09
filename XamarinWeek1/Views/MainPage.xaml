@@ -5,8 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="XamarinWeek1.MainPage">
-
-   <ScrollView>
+    <ScrollView>
         <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
             <Image Source="logointec.jpg" WidthRequest="150" HeightRequest="150"></Image>
             <Entry 

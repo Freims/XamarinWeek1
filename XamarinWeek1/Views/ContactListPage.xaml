@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinWeek1.Views.ContactListPage"
+             Title="Contacts">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="MenuItem1" Order="Primary" Text="ADD" Priority="0" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView ItemsSource="{Binding Contacts}"
+                  x:Name="listv"
+                  SelectedItem="{Binding SelectedContact}"
+                      RowHeight='-1'
+                      HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Text="More"
+                                          Command="{Binding Path=BindingContext.MoreCommand, Source={x:Reference listv}}"
+                                       CommandParameter="{Binding .}"/>
+                                <MenuItem Text="Delete"
+                                       Command="{Binding Path=BindingContext.DeleteElementCommand, Source={x:Reference listv}}"
+                                       CommandParameter="{Binding .}"
+                                       IsDestructive="True"/>
+                            </ViewCell.ContextActions>
+                            <StackLayout>
+                                <Label Style="{StaticResource ContactNames}" Text="{Binding Name}"/>
+                                <Label Style="{StaticResource ContactPhoneNumbers}" Text="{Binding PhoneNumber}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

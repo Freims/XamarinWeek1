@@ -12,6 +12,19 @@
                 <Setter Property="FontFamily" Value="OpenSans"/>
                 <Setter Property="FontSize" Value="Small"/>
             </Style>
+
+            <Style x:Key="ContactPhoneNumbers" TargetType="Label">
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontFamily" Value="OpenSans"/>
+                <Setter Property="FontSize" Value="Small"/>
+            </Style>
+
+            <Style x:Key="ContactNames" TargetType="Label">
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontFamily" Value="OpenSans"/>
+                <Setter Property="FontSize" Value="Large"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
             <Style TargetType="Button">
                 <Setter Property="FontAttributes" Value="Bold"/>
                 <Setter Property="FontFamily" Value="OpenSans"/>
